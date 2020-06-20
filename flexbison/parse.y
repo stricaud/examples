@@ -19,10 +19,11 @@ typedef void *yyscan_t;
 }
 
 %define api.pure full
-%define api.prefix {yy}
+%define api.prefix {e_yy}
 %define api.token.prefix {TOK_}
 %define api.value.type union
 %param {yyscan_t scanner}
+
 
 %token <char *>WORD
 

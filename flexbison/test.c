@@ -7,17 +7,17 @@ int main(int argc, char *argv)
 	yyscan_t scanner;
 	int state;
 	
-	if (yylex_init(&scanner) != 0) {
+	if (e_yylex_init(&scanner) != 0) {
 		fprintf(stderr, "Error initializing yylex\n");
 		return 1;
 	}
-	state = yy_scan_string(string, scanner);
-	if (yyparse(scanner) != 0) {
+	state = e_yy_scan_string(string, scanner);
+	if (e_yyparse(scanner) != 0) {
 		fprintf(stderr, "Error in yyparse\n");
 		return 1;
 	}
-	yy_delete_buffer(state, scanner);
-	yylex_destroy(scanner);
+	e_yy_delete_buffer(state, scanner);
+	e_yylex_destroy(scanner);
 	
 	return 0;
 }

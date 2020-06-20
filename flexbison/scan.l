@@ -1,7 +1,9 @@
-%option nodefault noinput nounput noyywrap
+%option nodefault noinput nounput noyywrap nounistd
 %option reentrant bison-bridge
+%option prefix="e_yy"
 
 %{
+#define YYSTYPE E_YYSTYPE
 #include <parse.h>
 %}
 
